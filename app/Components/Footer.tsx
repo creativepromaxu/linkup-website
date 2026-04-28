@@ -25,7 +25,7 @@ export default function Footer() {
         <div className="md:col-span-1">
           <Link href="/" className="inline-block mb-6">
             {/* الحاوية الزجاجية خلف اللوجو */}
-            <div className="bg-white/50 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
+            <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
               <Image 
                 src="/logo.png" 
                 alt="Link UP Logo" 
