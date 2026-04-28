@@ -1,26 +1,105 @@
 @import "tailwindcss";
 
+@theme {
+  --color-link-navy: #1A2849;
+  --color-link-green: #277F4A;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* الوضع الفاتح */
+  --background: #F4F7FA;
+  --foreground: #1A2849;
+  --nav-bg: rgba(255, 255, 255, 0.8);
+  --text-muted: #475569;
+  --section-bg: rgba(26, 40, 73, 0.05);
+  --card-bg: #ffffff;
+  --card-border: rgba(26, 40, 73, 0.1);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+[data-theme='dark'] {
+  /* الوضع الداكن */
+  --background: #152b62; 
+  --foreground: #ffffff;
+  --nav-bg: rgba(255, 255, 255, 0.9); 
+  --text-muted: #cbd5e1;
+  --section-bg: rgba(255, 255, 255, 0.05);
+  --card-bg: rgba(255, 255, 255, 0.05);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.glass-nav {
+  background-color: var(--nav-bg);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--card-border);
+}
+
+/* الكلاسات الذكية منسقة بشكل نظيف يمنع الأخطاء */
+.text-muted-smart { 
+  color: var(--text-muted); 
+  transition: color 0.3s ease; 
+}
+
+.bg-section-smart { 
+  background-color: var(--section-bg); 
+  border-top: 1px solid var(--card-border); 
+  border-bottom: 1px solid var(--card-border); 
+  transition: all 0.3s ease; 
+}
+
+.bg-card-smart { 
+  background-color: var(--card-bg); 
+  border: 1px solid var(--card-border); 
+  transition: all 0.3s ease; 
+}
+/* نظام تبديل اللغات الإجباري والذكي */
+html[lang='ar'] .lang-en { display: none !important; }
+html[lang='ar'] .lang-ar { display: block !important; }
+
+html[lang='en'] .lang-ar { display: none !important; }
+html[lang='en'] .lang-en { display: block !important; }
+
+
+
+.text-heading-smart { 
+  color: var(--foreground); 
+  transition: color 0.3s ease; 
+}
+
+
+/* حركات الشريط اللانهائي للشركاء والعملاء */
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes marquee-reverse {
+  0% { transform: translateX(-50%); }
+  100% { transform: translateX(0); }
+}
+
+.animate-marquee {
+  animation: marquee 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+.animate-marquee-reverse {
+  animation: marquee-reverse 40s linear infinite;
+  display: flex;
+  width: max-content;
+}
+
+/* إيقاف الحركة عند التمرير بالماوس (لمسة تفاعلية فخمة) */
+.hover-pause:hover {
+  animation-play-state: paused;
+}
+
+html {
+  scroll-behavior: smooth;
 }
