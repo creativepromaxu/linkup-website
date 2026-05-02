@@ -8,6 +8,7 @@ export default function ProductsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const productSections = [
+    { id: "miscellaneous", titleAr: "منوعات", titleEn: "Miscellaneous", count: 10 }, // القسم الجديد تمت إضافته هنا
     { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 4 },
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 6 },
     { id: "power-strips", titleAr: "التوصيلات", titleEn: "Power Strips", count: 3 },
@@ -49,7 +50,6 @@ export default function ProductsPage() {
               initial={{ opacity: 0, x: 20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              // تم التعديل هنا: أزرق كحلي فخم في الوضع الفاتح، وأبيض في الوضع الداكن
               className="text-3xl md:text-4xl font-black mb-10 text-heading-smart flex items-center gap-4"
             >
               <span className="w-2 h-10 bg-link-green rounded-full block"></span>

@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link"; // استيراد Link للتنقل
+import Link from "next/link";
 
 const slides = [
   {
@@ -60,7 +60,8 @@ export default function HeroSlider() {
   }, []);
 
   return (
-    <section className="relative h-screen w-full overflow-hidden flex items-center pt-10">
+    // تم تغيير h-screen إلى min-h-screen وإضافة padding عمودي للجوال
+    <section className="relative min-h-screen w-full overflow-hidden flex items-center pt-24 pb-12 md:pt-10 md:pb-0">
       <AnimatePresence mode="wait">
         <motion.div
           key={current}
@@ -68,15 +69,17 @@ export default function HeroSlider() {
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: lang === "ar" ? -50 : 50 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-10 items-center h-full"
+          // تحسين توزيع الـ grid في الجوال
+          className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-10 items-center"
         >
-          {/* قسم النصوص */}
+          {/* قسم النصوص - ترتيب 2 في الجوال و 1 في الكمبيوتر (للعربي) */}
           <div className={`order-2 ${lang === "ar" ? "md:order-1 text-right" : "md:order-2 text-left"} z-10`}>
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.2 }}
-              className="text-5xl md:text-7xl font-black mb-6 leading-tight"
+              // تصغير الخط في الجوال
+              className="text-3xl md:text-7xl font-black mb-4 md:mb-6 leading-tight text-slate-900 dark:text-white"
             >
               {lang === "ar" ? slides[current].titleAr : slides[current].titleEn}
             </motion.h1>
@@ -84,27 +87,27 @@ export default function HeroSlider() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-xl md:text-2xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl"
+              // ضبط حجم الوصف في الجوال
+              className="text-lg md:text-2xl text-gray-500 dark:text-gray-400 mb-8 max-w-2xl"
             >
               {lang === "ar" ? slides[current].descAr : slides[current].descEn}
             </motion.p>
             
-            {/* زر استكشف الآن مع التوهج والربط بصفحة المنتجات */}
             <Link href="/products">
               <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-link-green text-white px-10 py-4 rounded-full font-bold text-lg cursor-pointer transition-all shadow-[0_0_20px_rgba(39,127,74,0.5)] hover:shadow-[0_0_30px_rgba(39,127,74,0.8)]"
+                className="bg-link-green text-white px-8 py-3 md:px-10 md:py-4 rounded-full font-bold text-base md:text-lg cursor-pointer transition-all shadow-[0_0_20px_rgba(39,127,74,0.5)] hover:shadow-[0_0_30px_rgba(39,127,74,0.8)]"
               >
                 {lang === "ar" ? "استكشف المنتجات" : "Explore Products"}
               </motion.button>
             </Link>
           </div>
 
-          {/* قسم الصورة */}
-          <div className={`order-1 ${lang === "ar" ? "md:order-2" : "md:order-1"} flex justify-center items-center relative h-full max-h-[600px]`}>
-            {/* إعادة تأثير الإضاءة الخلفية (Glow) للصورة */}
-            <div className="absolute inset-0 bg-gradient-to-tr from-link-green/30 dark:from-link-green/50 to-transparent rounded-full blur-[100px] opacity-70 transition-opacity duration-500"></div>
+          {/* قسم الصورة - ترتيب 1 في الجوال ليكون في الأعلى */}
+          <div className={`order-1 ${lang === "ar" ? "md:order-2" : "md:order-1"} flex justify-center items-center relative h-[300px] md:h-full max-h-[500px] md:max-h-[600px]`}>
+            {/* Glow effect */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-link-green/20 dark:from-link-green/40 to-transparent rounded-full blur-[60px] md:blur-[100px] opacity-70"></div>
             
             <motion.div 
               initial={{ scale: 0.8, opacity: 0 }}
@@ -114,24 +117,24 @@ export default function HeroSlider() {
             >
               <Image 
                 src={slides[current].image}
-                alt={lang === "ar" ? slides[current].titleAr : slides[current].titleEn}
-                width={600}
-                height={600}
-                className="object-contain"
-                priority={current === 0} 
+                alt="Product Image"
+                width={500}
+                height={500}
+                className="object-contain max-h-full"
+                priority
               />
             </motion.div>
           </div>
         </motion.div>
       </AnimatePresence>
 
-      {/* مؤشرات التبديل السفلية */}
-      <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
+      {/* مؤشرات التبديل السفلية - رفعها قليلاً لعدم التداخل */}
+      <div className="absolute bottom-6 md:bottom-10 left-1/2 -translate-x-1/2 flex gap-3 z-20">
         {slides.map((_, index) => (
           <button
             key={index}
             onClick={() => setCurrent(index)}
-            className={`h-2 transition-all duration-500 rounded-full cursor-pointer ${current === index ? "w-12 bg-link-green" : "w-3 bg-gray-400/50 dark:bg-white/30"}`}
+            className={`h-2 transition-all duration-500 rounded-full cursor-pointer ${current === index ? "w-8 md:w-12 bg-link-green" : "w-2 md:w-3 bg-gray-400/50 dark:bg-white/30"}`}
             aria-label={`Go to slide ${index + 1}`}
           />
         ))}
