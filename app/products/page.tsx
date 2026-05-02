@@ -8,7 +8,7 @@ export default function ProductsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const productSections = [
-    { id: "monawa", titleAr: "منوعات", titleEn: "monawa", count: 12 }, // القسم الجديد تمت إضافته هنا
+    { id: "monawaa", titleAr: "منوعات", titleEn: "monawaa", count: 12 }, // القسم الجديد تمت إضافته هنا
     { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 4 },
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 6 },
     { id: "power-strips", titleAr: "التوصيلات", titleEn: "Power Strips", count: 3 },
