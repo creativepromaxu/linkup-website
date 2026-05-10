@@ -36,7 +36,7 @@ export default function ProductSpotlight() {
               {images.map((img, index) => (
                 <div
                   key={`${iteration}-${index}`}
-                  className="w-[280px] md:w-[400px] aspect-[1080/1500] rounded-[30px] md:rounded-[40px] relative overflow-hidden flex-shrink-0 shadow-[0_15px_40px_rgba(0,0,0,0.2)] border border-white/5 bg-card-smart group"
+                  className="w-[280px] md:w-[400px] aspect-[941/1672] rounded-[30px] md:rounded-[40px] relative overflow-hidden flex-shrink-0 shadow-[0_15px_40px_rgba(0,0,0,0.2)] border border-white/5 bg-card-smart group"
                 >
                   <Image
                     src={`${IMG_PATH}${img}`}

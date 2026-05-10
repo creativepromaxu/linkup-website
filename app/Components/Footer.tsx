@@ -4,7 +4,7 @@ import Image from "next/image";
 import { 
   FaTiktok, 
   FaInstagram, 
-  FaYoutube, 
+  FaFacebook, 
   FaWhatsapp, 
   FaPhoneAlt, 
   FaEnvelope, 
@@ -13,26 +13,25 @@ import {
 
 export default function Footer() {
   const currentYear = new Date().getFullYear();
-  const socialHandle = "linkup.ksa";
   const whatsappNumber = "+966500810464";
-  const bulkOrderNumber = "+966500810464"; // تم وضع نفس الرقم بناءً على طلب العميل
+  const bulkOrderNumber = "+966500810464";
+  const emailAddress = "linkupgroup.co@gmail.com";
 
   return (
     <footer className="bg-[#0D1B3E] text-white border-t border-white/10 py-16 transition-colors">
       <div className="container mx-auto px-6 grid grid-cols-1 md:grid-cols-4 gap-12">
         
-        {/* عمود الشعار مع التأثير الزجاجي */}
+        {/* عمود الشعار */}
         <div className="md:col-span-1">
           <Link href="/" className="inline-block mb-6">
-            {/* الحاوية الزجاجية خلف اللوجو */}
-            <div className="bg-white/100 backdrop-blur-md p-4 rounded-2xl border border-white/20 shadow-xl">
+            <div className="bg-white p-4 rounded-2xl border border-white/20">
               <Image 
                 src="/logo.png" 
                 alt="Link UP Logo" 
                 width={140} 
                 height={48} 
                 style={{ width: '140px', height: 'auto' }}
-                className="object-contain filter drop-shadow-sm"
+                className="object-contain"
               />
             </div>
           </Link>
@@ -42,7 +41,7 @@ export default function Footer() {
           </p>
         </div>
 
-        {/* عمود التواصل - معلومات الاتصال */}
+        {/* عمود التواصل */}
         <div className="flex flex-col gap-4">
           <h4 className="text-xl font-bold mb-2 text-[#22C55E]">
              <span className="block lang-ar">تواصل معنا</span>
@@ -55,9 +54,9 @@ export default function Footer() {
             </div>
             <div className="flex items-center gap-3">
               <FaEnvelope className="text-[#22C55E]" />
-              <p className="text-sm">info@linkup.sa</p>
+              <p className="text-sm">{emailAddress}</p>
             </div>
-            {/* قسم طلب الكميات بتباين عالي */}
+            {/* قسم طلب الكميات */}
             <div className="mt-4 p-3 bg-white/5 border-r-4 border-[#22C55E] rounded-l-lg">
                <div className="flex items-center gap-2 mb-1">
                   <FaPhoneAlt className="text-[#22C55E] text-xs" />
@@ -68,32 +67,31 @@ export default function Footer() {
           </div>
         </div>
 
-        {/* عمود وسائل التواصل الاجتماعي (تيك توك - انستجرام - يوتيوب) */}
+        {/* عمود وسائل التواصل الاجتماعي */}
         <div>
           <h4 className="text-xl font-bold mb-6 text-[#22C55E]">
              <span className="block lang-ar">تابعنا</span>
              <span className="hidden lang-en">Follow Us</span>
           </h4>
           <div className="flex gap-4">
-            <a href={`https://tiktok.com/@${socialHandle}`} target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-black hover:text-white transition-all border border-white/5 shadow-lg">
+            <a href="https://www.tiktok.com/@linkup_ksa" target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-black hover:text-white transition-all border border-white/5">
               <FaTiktok size={22} />
             </a>
-            <a href={`https://instagram.com/${socialHandle}`} target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:text-white transition-all border border-white/5 shadow-lg">
+            <a href="https://www.instagram.com/linkup.ksa/" target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-gradient-to-tr from-[#f9ce34] via-[#ee2a7b] to-[#6228d7] hover:text-white transition-all border border-white/5">
               <FaInstagram size={22} />
             </a>
-            <a href={`https://youtube.com/@${socialHandle}`} target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-[#FF0000] hover:text-white transition-all border border-white/5 shadow-lg">
-              <FaYoutube size={22} />
+            <a href="https://www.facebook.com/profile.php?id=61572016451306" target="_blank" className="bg-white/10 p-3 rounded-xl hover:bg-[#1877F2] hover:text-white transition-all border border-white/5">
+              <FaFacebook size={22} />
             </a>
           </div>
-          <p className="mt-4 text-[#22C55E] text-sm font-bold">@{socialHandle}</p>
         </div>
 
-        {/* عمود الواتساب - زر سريع */}
+        {/* عمود الواتساب */}
         <div className="flex flex-col items-start md:items-center justify-center">
             <a 
               href={`https://wa.me/${whatsappNumber.replace('+', '')}`}
               target="_blank"
-              className="group flex items-center gap-4 bg-[#25D366] hover:bg-[#128C7E] text-white px-7 py-4 rounded-2xl transition-all shadow-[0_0_20px_rgba(37,211,102,0.3)] hover:scale-105 active:scale-95"
+              className="group flex items-center gap-4 bg-[#25D366] hover:bg-[#128C7E] text-white px-7 py-4 rounded-2xl transition-all hover:scale-105 active:scale-95"
             >
               <FaWhatsapp size={32} className="animate-bounce-slow" />
               <div className="text-right">

@@ -11,7 +11,6 @@ export default function Features() {
     { id: 6, icon: "⚡", titleAr: "توافق ذكي وشحن آمن", titleEn: "Smart Sync & Safe Charge", descAr: "تقنيات متطورة تضمن أعلى درجات التوافق والأمان لأجهزتك.", descEn: "Advanced tech ensuring seamless compatibility and safety for your devices." },
   ];
 
-  // تم إضافة "as const" هنا لحل مشكلة الـ TypeScript في الـ build
   const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
@@ -27,19 +26,20 @@ export default function Features() {
       y: 0, 
       transition: { 
         duration: 0.6, 
-        ease: "easeOut" // الآن TypeScript سيعرف أنها قيمة مدعومة
+        ease: "easeOut" 
       } 
     }
   } as const;
 
   return (
-    <section className="py-24 relative overflow-hidden bg-section-smart border-t border-white/5">
+    <section className="py-24 relative overflow-hidden bg-section-smart border-t border-black/5 dark:border-white/5">
       <div className="container mx-auto px-6 text-center mb-16">
+        {/* تمت إزالة drop-shadow-md من هنا */}
         <motion.h2 
           initial={{ opacity: 0, y: -20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="text-4xl md:text-5xl font-black text-link-green mb-4 drop-shadow-md"
+          className="text-4xl md:text-5xl font-black text-link-green mb-4"
         >
           <span className="block lang-ar">ما يميز Link UP</span>
           <span className="hidden lang-en">Why Choose Link UP</span>
@@ -67,14 +67,12 @@ export default function Features() {
             <motion.div
               key={feat.id}
               variants={itemVariants}
-              whileHover={{ 
-                y: -10, 
-                backgroundColor: "rgba(255, 255, 255, 0.05)",
-                transition: { duration: 0.3 }
-              }}
-              className={`p-10 rounded-[2.5rem] border ${feat.id === 1 ? 'border-link-green/40' : 'border-white/10'} bg-white/[0.02] backdrop-blur-xl flex flex-col items-center text-center shadow-sm hover:shadow-2xl hover:shadow-link-green/5 transition-all cursor-default`}
+              whileHover={{ y: -10 }} // الارتفاع للأعلى عند التمرير
+              // إزالة الظلال، إضافة group، وضبط لون الخلفية ليكون فلات ومتوافق مع الوضعين
+              className={`group p-10 rounded-[2.5rem] border ${feat.id === 1 ? 'border-link-green' : 'border-black/5 dark:border-white/10'} bg-black/[0.03] dark:bg-white/[0.03] hover:bg-black/[0.05] dark:hover:bg-white/[0.05] flex flex-col items-center text-center transition-colors duration-300 cursor-default`}
             >
-              <div className="text-6xl mb-8 filter drop-shadow-[0_0_15px_rgba(255,255,255,0.2)]">
+              {/* تمت إزالة التوهج وإضافة حركة تكبير للأيقونة */}
+              <div className="text-6xl mb-8 transition-transform duration-300 group-hover:scale-110">
                 {feat.icon}
               </div>
               <h3 className="text-2xl font-bold mb-4 text-link-green">

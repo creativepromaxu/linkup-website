@@ -21,7 +21,8 @@ export default function Partners() {
   return (
     <section className="py-24 overflow-hidden bg-section-smart relative">
       <div className="container mx-auto px-6 text-center mb-16">
-        <h2 className="text-4xl md:text-5xl font-black text-link-green mb-3 drop-shadow-md">
+        {/* تمت إزالة drop-shadow-md من هنا */}
+        <h2 className="text-4xl md:text-5xl font-black text-link-green mb-3">
           <span className="block lang-ar">شركاء النجاح</span>
           <span className="hidden lang-en">Our Partners</span>
         </h2>
@@ -37,7 +38,7 @@ export default function Partners() {
           <div className="absolute inset-y-0 left-0 w-32 bg-gradient-to-r from-[var(--background)] to-transparent z-10 pointer-events-none"></div>
           <div className="absolute inset-y-0 right-0 w-32 bg-gradient-to-l from-[var(--background)] to-transparent z-10 pointer-events-none"></div>
 
-          {/* الشريط الأول - تمت إزالة التدرج الرمادي والشفافية */}
+          {/* الشريط الأول */}
           <div className="w-full overflow-hidden">
             <div className="animate-marquee hover-pause gap-16 px-8">
               {duplicatedLogos.map((logo, index) => (
@@ -48,7 +49,7 @@ export default function Partners() {
             </div>
           </div>
 
-          {/* الشريط الثاني - تمت إزالة التدرج الرمادي والشفافية */}
+          {/* الشريط الثاني */}
           <div className="w-full overflow-hidden">
             <div className="animate-marquee-reverse hover-pause gap-16 px-8">
               {duplicatedReverse.map((logo, index) => (

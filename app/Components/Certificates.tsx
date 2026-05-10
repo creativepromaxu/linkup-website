@@ -14,22 +14,22 @@ interface Testimonial {
 }
 
 const testimonials: Testimonial[] = [
-  { id: 1, name: "عمر خالد", text_ar: "أفضل كيبل شحن جربته، جودة التصنيع خيالية ولا يسخن أبداً.", text_en: "Best charging cable ever, build quality is insane.", product_ar: "كيبل Ultra-Fast", product_en: "Ultra-Fast Cable", avatar: "OK" },
-  { id: 2, name: "سارة محمود", text_ar: "شنطة الإكسسوارات من لينك أب صارت رفيقتي في كل سفرة، منظمة جداً.", text_en: "The Link Up tech bag is my travel companion.", product_ar: "شنطة التنظيم الذكية", product_en: "Smart Tech Bag", avatar: "SM" },
-  { id: 3, name: "فهد العتيبي", text_ar: "توصيلة المنافذ 7 في 1 حلت لي كل مشاكل الماك بوك، أنصح بها بشدة.", text_en: "The 7-in-1 hub solved all my MacBook issues.", product_ar: "وصلة Multi-Hub", product_en: "Multi-Hub Adapter", avatar: "FA" },
-  { id: 4, name: "لينا القاسم", text_ar: "السماعات عزلها بطل وصوتها نقي جداً مقارنة بسعرها.", text_en: "The noise cancellation is great and the sound is pure.", product_ar: "سماعات Pro Buds", product_en: "Pro Buds", avatar: "LQ" },
-  { id: 5, name: "عبدالله محمد", text_ar: "الباور بانك نحيف جداً ويشحن الآيفون بسرعة البرق.", text_en: "Power bank is super slim and charges iPhone fast.", product_ar: "شاحن متنقل Slim", product_en: "Slim Power Bank", avatar: "AM" },
-  { id: 6, name: "ريم علي", text_ar: "تصاميم المنتجات في لينك أب تنافس البراندات العالمية، فخامة!", text_en: "Link Up designs compete with global brands.", product_ar: "إكسسوارات منوعة", product_en: "General Accessories", avatar: "RA" },
-  { id: 7, name: "يوسف إدريس", text_ar: "الكيبل المغناطيسي فكرة عبقرية، مريح جداً في السيارة.", text_en: "Magnetic cable is a genius idea, very convenient.", product_ar: "الكيبل المغناطيسي", product_en: "Magnetic Cable", avatar: "YI" },
-  { id: 8, name: "نورة سليمان", text_ar: "جودة الشنط عندكم فوق الوصف، القماش فخم وشكلها أنيق.", text_en: "The bag quality is beyond words, premium fabric.", product_ar: "شنطة ظهر ذكية", product_en: "Smart Backpack", avatar: "NS" },
-  { id: 9, name: "سلطان الحربي", text_ar: "سرعة التوصيل والتعامل الراقي تخليني زبون دائم.", text_en: "Fast delivery and professional service.", product_ar: "خدمة العملاء", product_en: "Customer Service", avatar: "SH" },
-  { id: 10, name: "هند الناصر", text_ar: "وصلات الصوت نقية وما فيها أي تشويش، شكراً لينك أب.", text_en: "Audio adapters are crystal clear. Thanks Link Up.", product_ar: "وصلات الصوت", product_en: "Audio Adapters", avatar: "HN" },
+  { id: 1, name: "مؤسسة الأفق للاتصالات", text_ar: "منتجات لينك أب سريعة الدوران في معارضنا، جودة الكيابل ممتازة جداً ونسبة المرتجعات معدومة.", text_en: "Link Up products sell fast in our stores. Cable quality is excellent with zero returns.", product_ar: "طلبيات الكيابل بالجملة", product_en: "Bulk Cable Orders", avatar: "أ" },
+  { id: 2, name: "شركة النوافذ التقنية", text_ar: "تعامل احترافي وتوفير للكميات المطلوبة في وقت قياسي. الشنط الذكية حققت مبيعات رائعة لدينا.", text_en: "Professional dealing and fast fulfillment of large quantities. Smart bags achieved great sales.", product_ar: "توريد شنط وإكسسوارات", product_en: "Bags & Accessories Supply", avatar: "ن" },
+  { id: 3, name: "معارض إلكترو بلس", text_ar: "هوامش الربح ممتازة والأسعار التنافسية تجعل لينك أب خيارنا الأول دائماً في التوريد واعتماد المنتجات.", text_en: "Excellent profit margins and competitive pricing make Link Up our top choice for supply.", product_ar: "شراكة توزيع استراتيجية", product_en: "Strategic Distribution", avatar: "إ" },
+  { id: 4, name: "متاجر القمة الذكية", text_ar: "سماعات Pro Buds عليها طلب عالي من عملائنا، التغليف الفاخر والمواصفات العالية تسهل عملية البيع.", text_en: "High demand for Pro Buds from our customers. Premium packaging makes selling easy.", product_ar: "طلبيات الصوتيات بالجملة", product_en: "Wholesale Audio Orders", avatar: "ق" },
+  { id: 5, name: "مؤسسة ريادة الأعمال", text_ar: "تنوع الباور بانك وأحجامه المختلفة يغطي كافة احتياجات السوق لدينا، شكراً لسرعة الإنجاز والترتيب.", text_en: "The variety of power banks covers all our market needs. Thanks for the quick processing.", product_ar: "توريد شواحن متنقلة", product_en: "Power Banks Supply", avatar: "ر" },
+  { id: 6, name: "الوكيل المعتمد للتقنية", text_ar: "من أفضل الموردين في السوق، التزام بالمواعيد وجودة ترفع الرأس أمام عملائنا في قطاع التجزئة.", text_en: "One of the best suppliers in the market. Punctuality and quality we are proud of.", product_ar: "عقود توريد شاملة", product_en: "Comprehensive Contracts", avatar: "و" },
+  { id: 7, name: "شركة المسار السريع", text_ar: "الكيابل المغناطيسية نفذت من فروعنا في أول أسبوع، منتجاتكم دائماً تواكب أحدث تطلعات السوق.", text_en: "Magnetic cables sold out in the first week. Your products always meet market trends.", product_ar: "توريد المنتجات الحديثة", product_en: "Trending Products Supply", avatar: "م" },
+  { id: 8, name: "أسواق العاصمة الذكية", text_ar: "خدمة ما بعد البيع ودعم الموزعين من لينك أب لا يعلى عليه، نحن فخورون بهذه الشراكة الناجحة.", text_en: "After-sales service and distributor support are unmatched. A successful partnership.", product_ar: "دعم الموزعين المعتمدين", product_en: "Authorized Dealers Support", avatar: "ع" },
+  { id: 9, name: "مؤسسة الإمداد الأول", text_ar: "تغليف الكراتين الممتاز وترتيب البضاعة يسهل علينا استلام الطلبيات الكبيرة وجردها وتوزيعها بسرعة.", text_en: "Carton packaging and goods arrangement make receiving and inventorying large orders easy.", product_ar: "الخدمات اللوجستية والتوريد", product_en: "Logistics & Supply", avatar: "م" },
+  { id: 10, name: "معارض التكنولوجيا الحديثة", text_ar: "التوصيلات الكهربائية مطابقة بالكامل للمواصفات والمقاييس، وهذا يمنحنا ثقة وموثوقية في السوق.", text_en: "Power adapters meet all standards, giving us confidence and reliability in the market.", product_ar: "المنتجات المعتمدة محلياً", product_en: "Certified Products", avatar: "ت" },
 ];
 
 export default function AppleStyleSlider() {
   const [index, setIndex] = useState(0);
 
-  // تحريك السلايدر تلقائياً كل 3 ثوانٍ
+  // تحريك السلايدر تلقائياً كل 3.5 ثوانٍ
   useEffect(() => {
     const timer = setInterval(() => {
       setIndex((prev) => (prev + 1) % testimonials.length);
@@ -37,19 +37,18 @@ export default function AppleStyleSlider() {
     return () => clearInterval(timer);
   }, []);
 
-  // وظيفة لجلب إندكس العناصر المجاورة (لخلق حلقة مستمرة)
   const getIndex = (offset: number) => {
     return (index + offset + testimonials.length) % testimonials.length;
   };
 
-  const visibleIndices = [-1, 0, 1]; // يمثل العنصر السابق، الحالي، واللاحق
+  const visibleIndices = [-1, 0, 1];
 
   return (
     <section className="py-24 bg-section-smart overflow-hidden relative">
       <div className="container mx-auto px-6 text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-black text-link-green mb-4">
-          <span className="block lang-ar">عائلة Link Up</span>
-          <span className="hidden lang-en">The Link Up Family</span>
+          <span className="block lang-ar">شركاء النجاح الموزعين</span>
+          <span className="hidden lang-en">Our Distributor Partners</span>
         </h2>
       </div>
 
@@ -79,13 +78,13 @@ export default function AppleStyleSlider() {
                   <div className={`
                     w-full h-full p-8 rounded-[3rem] 
                     bg-white dark:bg-white/[0.03] backdrop-blur-xl
-                    border border-white/20 dark:border-white/10
-                    shadow-2xl flex flex-col justify-between
-                    ${isCenter ? 'ring-2 ring-link-green/20' : ''}
+                    border flex flex-col justify-between
+                    ${isCenter ? 'border-link-green' : 'border-black/5 dark:border-white/10'}
                   `}>
                     {/* Header */}
                     <div className="flex justify-between items-start">
-                      <div className="w-14 h-14 rounded-2xl bg-link-green text-white flex items-center justify-center text-xl font-bold shadow-lg shadow-link-green/20">
+                      {/* إزالة الظل من الأيقونة */}
+                      <div className="w-14 h-14 rounded-2xl bg-link-green text-white flex items-center justify-center text-2xl font-bold">
                         {item.avatar}
                       </div>
                       <div className="flex text-yellow-500 text-sm">
@@ -122,7 +121,7 @@ export default function AppleStyleSlider() {
         {testimonials.map((_, i) => (
           <div 
             key={i} 
-            className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-link-green' : 'w-2 bg-link-green/20'}`}
+            className={`h-1.5 transition-all duration-500 rounded-full ${i === index ? 'w-8 bg-link-green' : 'w-2 bg-muted-smart opacity-50'}`}
           />
         ))}
       </div>

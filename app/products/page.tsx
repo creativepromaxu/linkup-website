@@ -8,13 +8,14 @@ export default function ProductsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const productSections = [
-    { id: "monawaa", titleAr: "منوعات", titleEn: "monawaa", count: 7 }, // القسم الجديد تمت إضافته هنا
+    { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 7 }, // القسم الجديد تمت إضافته هنا
     { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 7 },
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 8 },
-    { id: "power-strips", titleAr: "التوصيلات", titleEn: "Power Strips", count: 7 },
+    { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 7 },
     { id: "bags", titleAr: "الشنط", titleEn: "Bags", count: 6 },
-    { id: "stands", titleAr: "الستاندات", titleEn: "Stands", count: 29 },
-    { id: "cases", titleAr: "الكفرات", titleEn: "Cases", count: 15 },
+    { id: "HoldersandStands", titleAr: "هولدرات واستندات", titleEn: "Holders and Stands", count: 29 },
+    { id: "PhoneGrip", titleAr: "المسكات", titleEn: "Phone Grip", count: 29 },
+    { id: "cases", titleAr: "حمايات وستيكرات", titleEn: "Cases", count: 15 },
   ];
 
   const CATALOG_PATH = "/catalog/";

@@ -34,9 +34,9 @@ const AnimatedCounter = ({ value }: { value: number }) => {
 
 export default function StatsCounters() {
   const stats = [
-    { num: 2015, titleAr: "سنة التأسيس", titleEn: "Established", plus: false },
-    { num: 500, titleAr: "عميل نثق به", titleEn: "Trusted Clients", plus: true },
-    { num: 25, titleAr: "مدينة مغطاة", titleEn: "Cities Covered", plus: true },
+    { num: 2023, titleAr: "سنة التأسيس", titleEn: "Established", plus: false },
+    { num: 10000000, titleAr: "مستخدم يثق بنا", titleEn: "Trusted Users", plus: true },
+    { num: 15, titleAr: "مدينة مغطاة", titleEn: "Cities Covered", plus: true },
     { num: 120, titleAr: "موزع معتمد", titleEn: "Authorized Dealers", plus: true },
   ];
 
@@ -54,7 +54,8 @@ export default function StatsCounters() {
               transition={{ delay: index * 0.1, type: "spring" }}
               className="flex flex-col items-center justify-center p-6 rounded-3xl hover:scale-105 transition-transform cursor-default"
             >
-              <h2 className="text-5xl md:text-6xl font-black text-link-green mb-4 flex items-center drop-shadow-md">
+              {/* تمت إزالة drop-shadow-md من هنا */}
+              <h2 className="text-5xl md:text-6xl font-black text-link-green mb-4 flex items-center">
                 {stat.plus && <span className="text-3xl mr-1">+</span>}
                 <AnimatedCounter value={stat.num} />
               </h2>
