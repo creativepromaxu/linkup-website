@@ -5,15 +5,14 @@ import Link from "next/link";
 import Image from "next/image";
 
 export default function Navbar() {
-  // 1. بدأنا الحالة كـ false (لأن الموقع فاتح افتراضياً)
   const [isDark, setIsDark] = useState(false);
   const [lang, setLang] = useState("AR");
-  
-  // منطق الرأسية الذكية (Smart Navbar)
   const [showNav, setShowNav] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
 
-  // 2. ضبط الثيم عند تحميل الصفحة بناءً على حفظ المستخدم أو تفضيلات جهازه
+  // رقم الواتساب الخاص بكم
+  const whatsappNumber = "966500810464";
+
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme');
     const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -27,14 +26,13 @@ export default function Navbar() {
     }
   }, []);
 
-  // التحكم بإظهار وإخفاء النافبار عند التمرير
   useEffect(() => {
     const controlNavbar = () => {
       if (typeof window !== 'undefined') {
         if (window.scrollY > lastScrollY && window.scrollY > 80) {
-          setShowNav(false); // إخفاء عند النزول
+          setShowNav(false);
         } else {
-          setShowNav(true);  // إظهار عند الصعود
+          setShowNav(true);
         }
         setLastScrollY(window.scrollY);
       }
@@ -43,12 +41,11 @@ export default function Navbar() {
     return () => window.removeEventListener('scroll', controlNavbar);
   }, [lastScrollY]);
 
-  // 3. تحديث دالة التبديل لتحفظ الخيار الجديد
   const toggleTheme = () => {
     const newTheme = !isDark ? 'dark' : 'light';
     setIsDark(!isDark);
     document.documentElement.setAttribute('data-theme', newTheme);
-    localStorage.setItem('theme', newTheme); // حفظ خيار المستخدم
+    localStorage.setItem('theme', newTheme);
   };
 
   const toggleLang = () => {
@@ -60,7 +57,6 @@ export default function Navbar() {
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 p-4 transition-transform duration-500 ease-in-out ${showNav ? 'translate-y-0' : '-translate-y-full'}`}>
-      {/* تمت إزالة الظلال والاعتماد على الزجاج النقي */}
       <div className="max-w-7xl mx-auto rounded-2xl px-6 py-2 flex items-center justify-between glass-nav border-b border-white/5">
         
         <Link href="/" className="flex items-center">
@@ -82,9 +78,16 @@ export default function Navbar() {
           <Link href="#about" className="text-link-navy hover:text-link-green transition-colors">
             {lang === "AR" ? "من نحن" : "About"}
           </Link>
-          <Link href="#pos" className="text-link-navy hover:text-link-green transition-colors">
+          
+          {/* تم تعديل هذا الرابط ليفتح الواتساب */}
+          <a 
+            href={`https://wa.me/${whatsappNumber}`} 
+            target="_blank" 
+            rel="noopener noreferrer"
+            className="text-link-navy hover:text-link-green transition-colors cursor-pointer"
+          >
             {lang === "AR" ? "كن نقطة بيع" : "Become a Seller"}
-          </Link>
+          </a>
         </div>
 
         <div className="flex items-center gap-3">

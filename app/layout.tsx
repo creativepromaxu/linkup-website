@@ -2,9 +2,10 @@ import type { Metadata } from "next";
 import { Cairo } from "next/font/google";
 import "./globals.css";
 
-// استيراد المكونات الأساسية - مع استخدام حرف C كبير للمجلد
+// استيراد المكونات الأساسية
 import Navbar from "./Components/Navbar"; 
 import Footer from "./Components/Footer";
+import WhatsAppFloat from "./Components/WhatsAppFloat"; // المكون الجديد
 
 const cairo = Cairo({ 
   subsets: ["arabic"],
@@ -53,12 +54,18 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="ar" dir="rtl">
       <body className={`${cairo.className} antialiased`}>
+        {/* التنقل العلوي */}
         <Navbar />
         
+        {/* محتوى الصفحة الأساسي */}
         <main>
           {children} 
         </main>
+
+        {/* الزر العائم للواتساب (يظهر في جميع الصفحات) */}
+        <WhatsAppFloat />
         
+        {/* التذييل */}
         <Footer />
       </body>
     </html>
