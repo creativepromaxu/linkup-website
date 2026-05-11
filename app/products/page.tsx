@@ -8,7 +8,7 @@ export default function ProductsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const productSections = [
-    { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 7 }, // القسم الجديد تمت إضافته هنا
+    { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 7 },
     { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 7 },
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 8 },
     { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 7 },
@@ -24,12 +24,12 @@ export default function ProductsPage() {
     <main className="min-h-screen pt-32 pb-20">
       <div className="container mx-auto px-6 max-w-7xl">
         
-        {/* عنوان الصفحة الرئيسي */}
+        {/* عنوان الصفحة الرئيسي - تم إزالة drop-shadow */}
         <div className="text-center mb-20">
           <motion.h1 
             initial={{ opacity: 0, y: -20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl md:text-6xl font-black text-link-green mb-4 drop-shadow-md"
+            className="text-4xl md:text-6xl font-black text-link-green mb-4"
           >
             <span className="block lang-ar">كتالوج المنتجات</span>
             <span className="hidden lang-en">Products Catalog</span>
@@ -47,15 +47,19 @@ export default function ProductsPage() {
             id={section.id} 
             className="mb-24 scroll-mt-32 border-b border-white/5 pb-16 last:border-0"
           >
+            {/* تم إضافة justify-center لتوسيط العنوان مع الأيقونة الخضراء */}
             <motion.h2 
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
-              className="text-3xl md:text-4xl font-black mb-10 text-heading-smart flex items-center gap-4"
+              className="text-3xl md:text-4xl font-black mb-10 text-heading-smart flex items-center justify-center gap-4 text-center"
             >
               <span className="w-2 h-10 bg-link-green rounded-full block"></span>
-              <span className="lang-ar">{section.titleAr}</span>
-              <span className="hidden lang-en">{section.titleEn}</span>
+              <div>
+                <span className="lang-ar block">{section.titleAr}</span>
+                <span className="hidden lang-en">{section.titleEn}</span>
+              </div>
+              <span className="w-2 h-10 bg-link-green rounded-full block"></span>
             </motion.h2>
 
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-8">
@@ -67,9 +71,10 @@ export default function ProductsPage() {
                     initial={{ opacity: 0, scale: 0.9 }}
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
-                    transition={{ delay: i * 0.1 }}
+                    transition={{ delay: i * 0.05 }}
                     onClick={() => setSelectedImage(imagePath)}
-                    className="aspect-square relative overflow-hidden group shadow-lg border border-white/10 bg-card-smart cursor-zoom-in transition-all duration-500 hover:shadow-[0_0_35px_rgba(39,127,74,0.4)] hover:border-link-green/50 hover:z-10"
+                    // تم إزالة shadow-lg و hover:shadow
+                    className="aspect-square relative overflow-hidden group border border-white/10 bg-card-smart cursor-zoom-in transition-all duration-500 hover:border-link-green/50 hover:z-10"
                   >
                     <Image
                       src={imagePath} 
@@ -103,12 +108,13 @@ export default function ProductsPage() {
               className="relative max-w-full max-h-full"
               onClick={(e) => e.stopPropagation()}
             >
+              {/* تم إزالة shadow-2xl */}
               <Image
                 src={selectedImage}
                 alt="Enlarged Product"
                 width={1200}
                 height={1200}
-                className="object-contain max-h-[90vh] w-auto shadow-2xl border-4 border-white/10"
+                className="object-contain max-h-[90vh] w-auto border-4 border-white/10"
               />
               <button 
                 onClick={() => setSelectedImage(null)}
