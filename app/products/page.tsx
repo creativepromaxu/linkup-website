@@ -13,8 +13,8 @@ export default function ProductsPage() {
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 8 },
     { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 7 },
     { id: "bags", titleAr: "الشنط", titleEn: "Bags", count: 6 },
-    { id: "HoldersandStands", titleAr: "هولدرات واستندات", titleEn: "Holders and Stands", count: 29 },
-    { id: "PhoneGrip", titleAr: "المسكات", titleEn: "Phone Grip", count: 29 },
+    { id: "HoldersandStands", titleAr: "هولدرات واستندات", titleEn: "Holders and Stands", count: 23 },
+    { id: "PhoneGrip", titleAr: "المسكات", titleEn: "Phone Grip", count: 6 },
     { id: "cases", titleAr: "حمايات وستيكرات", titleEn: "Cases", count: 15 },
   ];
 
