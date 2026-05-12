@@ -47,8 +47,8 @@ export default function AppleStyleSlider() {
     <section className="py-24 bg-section-smart overflow-hidden relative">
       <div className="container mx-auto px-6 text-center mb-16">
         <h2 className="text-4xl md:text-5xl font-black text-link-green mb-4">
-          <span className="block lang-ar">شركاء النجاح الموزعين</span>
-          <span className="hidden lang-en">Our Distributor Partners</span>
+          <span className="block lang-ar">ماذا يقول عملائنا عنّا ؟</span>
+          <span className="hidden lang-en">What do our customers say about us?</span>
         </h2>
       </div>
 

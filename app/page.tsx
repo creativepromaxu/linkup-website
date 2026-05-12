@@ -2,7 +2,6 @@ import HeroSlider from "./Components/HeroSlider";
 import VisionMission from "./Components/VisionMission";
 import StatsCounters from "./Components/StatsCounters";
 import Categories from "./Components/Categories";
-import Partners from "./Components/Partners";
 import Clients from "./Components/Clients";
 import Certificates from "./Components/Certificates";
 import Features from "./Components/Features"; // استيراد قسم المميزات الجديد
@@ -17,7 +16,6 @@ export default function Home() {
       <StatsCounters />
       <ProductSpotlight />
       <Categories />
-      <Partners /> 
       <Clients /> 
       <Certificates /> {/* قسم الشهادات المطور (Lightbox) */}
       <Features /> {/* إضافة قسم المميزات منفصلاً */}
