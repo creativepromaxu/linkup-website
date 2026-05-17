@@ -8,7 +8,7 @@ export default function ProductsPage() {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
   const productSections = [
-    { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 7 },
+    { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 6 },
     { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 7 },
     { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 8 },
     { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 7 },
