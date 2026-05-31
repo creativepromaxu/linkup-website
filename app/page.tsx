@@ -2,7 +2,6 @@ import HeroSlider from "./Components/HeroSlider";
 import VisionMission from "./Components/VisionMission";
 import StatsCounters from "./Components/StatsCounters";
 import Categories from "./Components/Categories";
-import Clients from "./Components/Clients";
 import Certificates from "./Components/Certificates";
 import Features from "./Components/Features"; // استيراد قسم المميزات الجديد
 import Map from "./Components/Map"; // استيراد قسم الخريطة الجديد

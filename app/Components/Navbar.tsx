@@ -14,13 +14,14 @@ export default function Navbar() {
   const whatsappNumber = "966500810464";
 
   useEffect(() => {
+    // التحقق فقط مما إذا كان المستخدم قد اختار الوضع الداكن بنفسه مسبقاً وحفظه
     const savedTheme = localStorage.getItem('theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+    if (savedTheme === 'dark') {
       setIsDark(true);
       document.documentElement.setAttribute('data-theme', 'dark');
     } else {
+      // يفتح الوضع الفاتح تلقائياً كخيار افتراضي دائمًا
       setIsDark(false);
       document.documentElement.setAttribute('data-theme', 'light');
     }

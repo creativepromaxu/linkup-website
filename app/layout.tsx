@@ -13,7 +13,7 @@ const cairo = Cairo({
 });
 
 export const metadata: Metadata = {
-  title: "Link UP | نربطك بالمستقبل",
+  title: "Link UP | جوالك بأمان",
   description: "علامة سعودية رائدة تقدم حلول وملحقات الهواتف الذكية بجودة عالمية.",
   
   // إعدادات الأيقونات (Favicon)
