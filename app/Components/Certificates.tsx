@@ -94,7 +94,8 @@ export default function AppleStyleSlider() {
 
                     {/* Content */}
                     <div className="flex-grow flex items-center py-6">
-                      <p className="text-xl md:text-2xl font-medium leading-tight text-link-navy dark:text-white">
+                      {/* تم تطبيق text-muted-smart هنا بدل text-link-navy */}
+                      <p className="text-xl md:text-2xl font-medium leading-tight text-muted-smart dark:text-white">
                         <span className="lang-ar">"{item.text_ar}"</span>
                         <span className="lang-en hidden">"{item.text_en}"</span>
                       </p>
@@ -103,7 +104,7 @@ export default function AppleStyleSlider() {
                     {/* Footer */}
                     <div className="border-t border-black/5 dark:border-white/5 pt-4">
                       <h4 className="font-bold text-lg text-link-green">{item.name}</h4>
-                      <p className="text-xs text-muted-smart font-bold uppercase tracking-tighter">
+                      <p className="text-xs text-muted-smart dark:text-white font-bold uppercase tracking-tighter">
                         <span className="lang-ar">{item.product_ar}</span>
                         <span className="lang-en hidden">{item.product_en}</span>
                       </p>

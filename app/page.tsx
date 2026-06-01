@@ -15,7 +15,6 @@ export default function Home() {
       <StatsCounters />
       <ProductSpotlight />
       <Categories />
-      <Clients /> 
       <Certificates /> {/* قسم الشهادات المطور (Lightbox) */}
       <Features /> {/* إضافة قسم المميزات منفصلاً */}
       <Map /> {/* إضافة قسم الخريطة ونقاط التواجد منفصلاً */}

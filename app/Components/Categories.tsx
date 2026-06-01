@@ -16,7 +16,6 @@ export default function Categories() {
   return (
     <section id="products" className="py-24 overflow-hidden bg-section-smart relative">
       <div className="container mx-auto px-6 text-center mb-16">
-        {/* إزالة drop-shadow-md من العنوان */}
         <motion.h2 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -31,7 +30,7 @@ export default function Categories() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.1 }}
-          className="text-xl text-muted-smart"
+          className="text-xl text-muted-smart dark:text-white"
         >
           <span className="block lang-ar">عالم من الملحقات الذكية بين يديك</span>
           <span className="hidden lang-en">A world of smart accessories at your fingertips</span>
@@ -50,29 +49,22 @@ export default function Categories() {
               whileHover={{ y: -12 }}
               className="relative group h-[350px]"
             >
-              {/* تمت إزالة ديف التوهج الخلفي الملون بالكامل */}
-              
-              {/* الكرت - تمت إزالة shadow-sm و hover:shadow-2xl */}
               <div className="relative h-full flex flex-col items-center justify-center p-10 rounded-[2.5rem] bg-white/50 dark:bg-white/[0.03] backdrop-blur-md border border-white/20 dark:border-white/10 group-hover:border-link-green/40 transition-all duration-500 z-10">
                 
-                {/* أيقونة الفئة - تمت إزالة drop-shadow-xl */}
                 <div className="text-7xl mb-6 group-hover:scale-110 transition-transform duration-500">
                   {cat.icon}
                 </div>
                 
                 <div className="text-center w-full">
-                  {/* تطبيق لمعة على الاسم تظهر فقط عند مرور الماوس */}
-                  <h3 className="relative inline-block overflow-hidden text-2xl font-black mb-6 text-link-navy dark:text-white group-hover:text-link-green transition-colors">
+                  {/* استخدمنا هنا text-muted-smart ليطابق نفس مبدأ النص الفرعي مع الاحتفاظ بتأثير الهوفر */}
+                  <h3 className="relative inline-block overflow-hidden text-2xl font-black mb-6 text-muted-smart dark:text-white group-hover:text-link-green transition-colors">
                     <span className="block lang-ar">{cat.nameAr}</span>
                     <span className="hidden lang-en">{cat.nameEn}</span>
-                    {/* لمعة الاسم */}
                     <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/50 dark:via-white/20 to-transparent -translate-x-full opacity-0 group-hover:opacity-100 hover-shimmer mix-blend-overlay pointer-events-none"></span>
                   </h3>
                   
                   <Link href={`/products#${cat.id}`} className="block w-full max-w-[180px] mx-auto">
-                    {/* الزر - تمت إزالة جميع الظلال (shadow-lg) */}
                     <button className="relative overflow-hidden w-full bg-link-green text-white text-base font-bold py-3 px-6 rounded-xl transition-all duration-300 active:scale-95">
-                      {/* لمعة الزر تظهر فقط عند التمرير بالماوس */}
                       <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full opacity-0 group-hover:opacity-100 hover-shimmer pointer-events-none"></span>
                       
                       <span className="relative z-10 lang-ar">تصفح الفئة</span>
@@ -91,7 +83,6 @@ export default function Categories() {
           0% { transform: translateX(-150%) skewX(-20deg); }
           100% { transform: translateX(150%) skewX(-20deg); }
         }
-        /* تفعيل اللمعة فقط عندما يكون مؤشر الماوس على الصنف */
         .group:hover .hover-shimmer {
           animation: shimmer-fast 1.5s infinite;
         }
