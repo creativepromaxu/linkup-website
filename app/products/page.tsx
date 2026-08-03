@@ -9,12 +9,12 @@ export default function ProductsPage() {
 
   const productSections = [
     { id: "Otherproducts", titleAr: "منتجات اخرى", titleEn: "Other products", count: 6 },
-    { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 7 },
-    { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 8 },
-    { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 7 },
+    { id: "Headphones", titleAr: "السماعات", titleEn: "Headphones", count: 8 },
+    { id: "chargers", titleAr: "الشواحن", titleEn: "Chargers", count: 9 },
+    { id: "powerstrips", titleAr: "الكيابل", titleEn: "Power Strips", count: 9 },
     { id: "bags", titleAr: "الشنط", titleEn: "Bags", count: 6 },
     { id: "HoldersandStands", titleAr: "هولدرات واستندات", titleEn: "Holders and Stands", count: 23 },
-    { id: "PhoneGrip", titleAr: "المسكات", titleEn: "Phone Grip", count: 6 },
+    { id: "PhoneGrip", titleAr: "المسكات", titleEn: "Phone Grip", count: 7 },
     { id: "cases", titleAr: "حمايات وستيكرات", titleEn: "Cases", count: 15 },
   ];
 
